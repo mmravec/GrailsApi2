@@ -1,5 +1,6 @@
 package user
 
+
 class User {
 
     String firstName

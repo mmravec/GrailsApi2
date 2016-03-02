@@ -1,6 +1,5 @@
 package user
 
-import org.springframework.dao.DataIntegrityViolationException
 
 class UserController {
     ArrayList<User> userList = new ArrayList<User>()
@@ -18,21 +17,7 @@ class UserController {
     }
 
     def save(User user){
-        /*
-        User user = new User()
-
-        user.properties = params
-        try{
-            userList.add(user)
-            user.save()
-            //user.findAll()
-        }catch(Exception e){
-            log.debug("Exception register USER: ", e)
-            //print("Exception register USER: ", e)
-        }
-        redirect action: "listOfUsers"
-        */
-        def userFound = User.findById(user.id)
+        def userFound = User.findById(user?.id)
         if(userFound){
             if(user.validate()){
                 user.save()
@@ -42,14 +27,13 @@ class UserController {
                 render view: "/user/user", model: [user: user]
                 return
             }
-
         }
         else {
             User u = new User()
-            u.setFirstName(user?.firstName)
-            u.setLastName(user?.lastName)
-            u.setAge(user?.age)
-            u.setCountry(user?.country)
+            u.setFirstName(params?.firstName)
+            u.setLastName(params?.lastName)
+            u.setAge(params?.age)
+            u.setCountry(params?.country)
             if(u.validate()){
                 u.save()
                 redirect action: "listOfUsers"
@@ -59,14 +43,13 @@ class UserController {
                 return
             }
         }
-
-
     }
 
     def listOfUsers(){
         def us = User.findAll()
         render view:"/viewUsers/list",model: [users:us]
     }
+
     def deleteListOfUsers(){
         def users = User.findAll()
 
@@ -76,6 +59,7 @@ class UserController {
         }
         redirect action: "listOfUsers"
     }
+
     def deleteByIdUser(){
         def id = params.id
         def users = User.get(id)
@@ -96,19 +80,3 @@ class UserController {
     }
 }
 
-
-/**
- *  def userDaoService //, grailsApplication
- def save(){
- // String meno = grailsApplication.config?.user?.meno
- def user = new User(params)
- user.save()
- render (view: "user", model: [user: user])
- }
-
- def showEvents() {
- def users = User.findAll()
- [users:users]
- }
- *
- */

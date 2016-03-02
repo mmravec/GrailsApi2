@@ -4953,3 +4953,4 @@ n:627:org/springframework/dao/NonTransientDataAccessException
 n:479:org/grails/databinding/bindingsource/DataBindingSourceCreationException
 n:544:grails/validation/Validateable
 n:566:org/codehaus/groovy/grails/validation/Validateable
+n:1820:grails/util/BuildSettings$getBaseDir$3

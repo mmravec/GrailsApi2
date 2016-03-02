@@ -17,7 +17,6 @@
             <table>
                 <input name="id" type="hidden" value="${user?.id}" />
                 <tr>
-
                     <td>
                         <g:hasErrors bean="${user}" field="firstName">
                             <p style="color:red"><g:message error="${user.errors?.getFieldError('firstName')}" encodeAs="HTML"/></p>
@@ -26,11 +25,33 @@
                         <input id="firstName" name="firstName" type="text" value="${user?.firstName}"/>
                     </td>
                 </tr>
-                <tr><td>Last name:</td><td><input id="lastname" name="lastName" type="text" value="${user?.lastName}"/>
-                </td></tr>
-                <tr><td>Country:</td><td><input id="country" name="country" type="text" value="${user?.country}"></td>
+                <tr>
+                    <td>
+                        <g:hasErrors bean="${user}" field="lastName">
+                            <p style="color:red"><g:message error="${user.errors?.getFieldError('lastName')}" encodeAs="HTML"/></p>
+                        </g:hasErrors>
+                        <label for="lastname">Last Name:</label>
+                        <input id="lastname" name="lastName" type="text" value="${user?.lastName}"/>
+                    </td>
                 </tr>
-                <tr><td>Age:</td><td><input id="age" name="age" type="text" value="${user?.age}"></td></tr>
+                <tr>
+                    <td>
+                        <g:hasErrors bean="${user}" field="country">
+                            <p style="color:red"><g:message error="${user.errors?.getFieldError('country')}" encodeAs="HTML"/></p>
+                        </g:hasErrors>
+                        <label for="country">Country:</label>
+                        <input id="country" name="country" type="text" value="${user?.country}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <g:hasErrors bean="${user}" field="age">
+                            <p style="color: red"><g:message error="${user.errors?.getFieldError('age')}" encodeAs="HTML"/></p>
+                        </g:hasErrors>
+                        <label for="age">Age:</label>
+                        <input id="age" name="age" type="text" value="${user?.age}"/>
+                    </td>
+                </tr>
                 <tr><td colspan="2"><input value="Save" type="submit"/></td></tr>
             </table>
         </g:form>
