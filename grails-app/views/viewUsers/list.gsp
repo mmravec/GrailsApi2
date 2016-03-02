@@ -24,6 +24,7 @@
                 <th>Last Name</th>
                 <th>Country</th>
                 <th>Age</th>
+                <th>Company</th>
                 <th>Actions</th>
             </tr>
             <g:each in="${users}" var="user">
@@ -39,6 +40,9 @@
                     </td>
                     <td>
                         ${user.age}
+                    </td>
+                    <td>
+                        ${user.companyId}
                     </td>
                     <td>
                         <g:link controller="user" action="deleteByIdUser" params="${[id: user.id]}">Delete</g:link>

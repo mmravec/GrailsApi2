@@ -1,7 +1,10 @@
 package user
 
+import company.Company
+
 
 class User {
+    static belongsTo = [company: Company]
 
     String firstName
     String lastName
@@ -10,6 +13,7 @@ class User {
 
     Date dateCreated
     Date lastUpdated
+
 
     static mapping = {
         table "Pouzivatel"
@@ -21,8 +25,8 @@ class User {
 
     static constraints = {
         firstName nullable: false, blank: false
-        lastName nullable: false
-        age nullable: false
-        country nullable: false
+        lastName nullable: false, blank: false
+        age nullable: false, blank: false
+        country nullable: false, blank: false
     }
 }

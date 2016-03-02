@@ -1,5 +1,7 @@
 package user
 
+import company.Company
+
 
 class UserController {
     ArrayList<User> userList = new ArrayList<User>()
@@ -34,6 +36,7 @@ class UserController {
             u.setLastName(params?.lastName)
             u.setAge(params?.age)
             u.setCountry(params?.country)
+            u.setCompany(Company.findById(params?.companyId))
             if(u.validate()){
                 u.save()
                 redirect action: "listOfUsers"
@@ -47,7 +50,7 @@ class UserController {
 
     def listOfUsers(){
         def us = User.findAll()
-        render view:"/viewUsers/list",model: [users:us]
+        render view:"/viewUsers/list", model: [users:us]
     }
 
     def deleteListOfUsers(){

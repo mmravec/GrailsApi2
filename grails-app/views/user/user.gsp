@@ -52,6 +52,15 @@
                         <input id="age" name="age" type="text" value="${user?.age}"/>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <g:hasErrors bean="${user}" field="companyId">
+                            <p style="color: red"><g:message error="${user.errors?.getFieldError('companyId')}" encodeAs="HTML"/></p>
+                        </g:hasErrors>
+                        <label for="companyId">CompanyId:</label>
+                        <input id="companyId" name="companyId" type="text" value="${user?.companyId}"/>
+                    </td>
+                </tr>
                 <tr><td colspan="2"><input value="Save" type="submit"/></td></tr>
             </table>
         </g:form>
