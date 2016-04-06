@@ -18,11 +18,11 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "postgres://ojedqftazhuvvl:WDgSjKvJ6iV3-1hizYHaVU3sTx@ec2-23-21-157-223.compute-1.amazonaws.com:5432/d60r9a4i03bv4i"
+            url = "postgres://rlomzbzrnrvoln:zu9K4Iikmk90a4OJ0vlrf26O3B@ec2-54-235-93-178.compute-1.amazonaws.com:5432/dbqcf64ja7i6l9"
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
             driverClassName = "com.mysql.jdbc.Driver"
-            username = "ojedqftazhuvvl"
-            password = "WDgSjKvJ6iV3-1hizYHaVU3sTx"
+            username = "rlomzbzrnrvoln"
+            password = "zu9K4Iikmk90a4OJ0vlrf26O3B"
         }
     }
     test {

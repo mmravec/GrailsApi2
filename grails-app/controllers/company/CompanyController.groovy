@@ -26,18 +26,18 @@ class CompanyController {
         render view: "/company/company"
     }
 
-//    def deleteByIdCompany(){
-//        def id = params.id
-//        def company = Company.get(id)
-//
-//        if(!company){
-//            flash.message = message(code: 'default.not.found.message', args: [message(default: 'Company'), id])
-//            redirect action: "listOfCompanys"
-//        }else {
-//            company.delete(flush: true)
-//            flash.message = message(code: 'default.deleted.message', args: [message(default: 'Company'), id])
-//            redirect action: "listOfCompanys"
-//        }
-//    }
+    def deleteByIdCompany(){
+        def id = params.id
+        def company = Company.get(id)
+
+        if(!company){
+            flash.message = message(code: 'default.not.found.message', args: [message(default: 'Company'), id])
+            redirect action: "listOfCompanys"
+        }else {
+            company.delete(flush: true)
+            flash.message = message(code: 'default.deleted.message', args: [message(default: 'Company'), id])
+            redirect action: "listOfCompanys"
+        }
+    }
 }
 
