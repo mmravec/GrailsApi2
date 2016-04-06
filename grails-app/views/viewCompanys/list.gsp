@@ -35,7 +35,7 @@
                     ${company?.aboutUs}
                 </td>
                 <td>
-                    <g:link controller="company" action="deleteByIdCompany" params="${[id: company.id]}">Delete</g:link>
+                    <g:link controller="user" action="deleteByIdUser" params="${[id: company.id]}">Delete</g:link>
                     <%--<g:link controller="user" action="editUser" params="${[id: user.id]}">Update</g:link>--%>
                   </td>
       </tr>
