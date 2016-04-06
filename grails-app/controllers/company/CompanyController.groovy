@@ -35,7 +35,7 @@ class CompanyController {
             redirect action: "listOfCompanys"
         }else {
             company.delete(flush: true)
-            flash.message = message(code: 'default.not.found.message', args: [message(default: 'Company'), id])
+            flash.message = message(code: 'default.deleted.message', args: [message(default: 'Company'), id])
             redirect action: "listOfCompanys"
         }
     }
